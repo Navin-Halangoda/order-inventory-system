@@ -1,6 +1,7 @@
 package com.example.order.Controller;
 import com.example.order.Dto.OrderDto;
 import com.example.order.Service.OrderService;
+import com.example.order.common.Orderesponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class OrderController {
             return orderService.getallorder();
         }
     @PostMapping("/creteorder")
-        public  OrderDto saveorder(@RequestBody OrderDto orderDto){
+        public Orderesponse saveorder(@RequestBody OrderDto orderDto){
         return orderService.saveorder(orderDto);
     }
 
